@@ -12,7 +12,7 @@ SRC = Base58.cpp IntGroup.cpp main.cpp Random.cpp \
 OBJDIR = obj
 
 gpu=1
-ccap=86
+ccap=75
 
 ifdef gpu
 
@@ -33,9 +33,9 @@ OBJET = $(addprefix $(OBJDIR)/, \
 
 endif
 
-CXX        = g++-9
-CUDA       = /usr/local/cuda-11.7
-CXXCUDA    = /usr/bin/g++-9
+CXX        = g++
+CUDA       = /usr/local/cuda-12.3
+CXXCUDA    = /usr/bin/g++
 NVCC       = $(CUDA)/bin/nvcc
 
 ifdef gpu
@@ -73,8 +73,8 @@ $(OBJDIR)/%.o : %.cpp
 all: VanitySearch
 
 VanitySearch: $(OBJET)
-	@echo Making vanitysearch...
-	$(CXX) $(OBJET) $(LFLAGS) -o vanitysearch
+	@echo Making test...
+	$(CXX) $(OBJET) $(LFLAGS) -o test
 
 $(OBJET): | $(OBJDIR) $(OBJDIR)/GPU $(OBJDIR)/hash
 
