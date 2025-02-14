@@ -12,7 +12,7 @@ SRC = Base58.cpp IntGroup.cpp main.cpp Random.cpp \
 OBJDIR = obj
 
 gpu=1
-ccap=75
+ccap=70
 
 ifdef gpu
 
